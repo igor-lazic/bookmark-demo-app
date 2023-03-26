@@ -1,11 +1,12 @@
 package biz.asio.bookmark.rest;
 
-import biz.asio.bookmark.model.Bookmark;
 import biz.asio.bookmark.model.User;
 import biz.asio.bookmark.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -22,15 +23,5 @@ public class UserRestController {
         List<User> users = userRepository.findAll();
         users.forEach(user -> user.setPassword(null));
         return users;
-    }
-
-    @PostMapping(value = "/update/{userName}")
-    public User saveUserBookmarks(@PathVariable String userName, @RequestBody List<Bookmark> bookmarks) {
-        User user = userRepository.findUserByUserName(userName);
-        user.setPrivateBookmarks(bookmarks);
-        userRepository.save(user);
-        // remove password on return
-        user.setPassword(null);
-        return user;
     }
 }

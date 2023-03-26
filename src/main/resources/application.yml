@@ -10,7 +10,7 @@ logging:
   level:
     root: info
     org:
-      springframework: DEBUG
+      springframework: INFO
 spring:
   jackson:
     default-property-inclusion: non_empty

@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface BookmarkRepository extends MongoRepository<Bookmark, String> {
     List<Bookmark> findBookmarksByOwnerUserName(String ownerUserId);
+    Bookmark findBookmarksByUrl(String url);
 }

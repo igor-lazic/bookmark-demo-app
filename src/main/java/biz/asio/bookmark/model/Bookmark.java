@@ -12,4 +12,6 @@ public class Bookmark {
     private boolean publicBookmark;
     private String ownerUserName;
     private String url;
+    private String category;
+    private String stars;
 }

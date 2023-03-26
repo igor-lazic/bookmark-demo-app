@@ -47,6 +47,12 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Allowing non authenticated http traffic to auth, requiring token for everything else
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
