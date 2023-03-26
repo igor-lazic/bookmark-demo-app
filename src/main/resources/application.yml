@@ -1,0 +1,16 @@
+### MongoDB properties ###
+mongodb:
+  uri: mongodb://localhost:27017
+jwt:
+  secret: some_very_secret_keyddshf34823jdhfkljhdfkldjshfkldsrh3458274023789ewfsdfs121290!"1298
+server:
+  servlet:
+    context-path: /api
+logging:
+  level:
+    root: info
+    org:
+      springframework: DEBUG
+spring:
+  jackson:
+    default-property-inclusion: non_empty
